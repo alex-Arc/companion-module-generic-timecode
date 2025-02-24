@@ -1,3 +1,3 @@
-## Your module
+# Generic TimeCode
 
-Write some help for your users here!
+Generic timecode handler

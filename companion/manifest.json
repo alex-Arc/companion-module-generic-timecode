@@ -1,16 +1,16 @@
 {
-	"id": "your-module-name",
-	"name": "your-module-name",
-	"shortname": "module-shortname",
-	"description": "A short one line description of your module",
-	"version": "0.0.0",
+	"id": "generic-timecode",
+	"name": "generic-timecode",
+	"shortname": "timecode",
+	"description": "Handle timecode",
+	"version": "0.1.0",
 	"license": "MIT",
-	"repository": "git+https://github.com/bitfocus/companion-module-your-module-name.git",
-	"bugs": "https://github.com/bitfocus/companion-module-your-module-name/issues",
+	"repository": "git+https://github.com/alex-Arc/companion-module-generic-timecode.git",
+	"bugs": "https://github.com/alex-Arc/companion-module-generic-timecode/issues",
 	"maintainers": [
 		{
-			"name": "Your name",
-			"email": "Your email"
+			"name": "Alex",
+			"email": "ac+companion@omnivox.dk"
 		}
 	],
 	"runtime": {
@@ -20,7 +20,7 @@
 		"entrypoint": "../dist/main.js"
 	},
 	"legacyIds": [],
-	"manufacturer": "Your company",
-	"products": ["Your product"],
-	"keywords": []
+	"manufacturer": "Generic",
+	"products": ["Timecode"],
+	"keywords": ["Generic", "LTC"]
 }

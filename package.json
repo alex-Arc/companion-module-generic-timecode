@@ -1,5 +1,5 @@
 {
-	"name": "your-module-name",
+	"name": "generic-timecode",
 	"version": "0.1.0",
 	"main": "dist/main.js",
 	"type": "module",
@@ -7,26 +7,33 @@
 		"postinstall": "husky",
 		"format": "prettier -w .",
 		"package": "run build && companion-module-build",
-		"build": "rimraf dist && run build:main",
+		"build": "rimraf dist && rimraf build && run configure && run build:gyp && run build:main",
 		"build:main": "tsc -p tsconfig.build.json",
 		"dev": "tsc -p tsconfig.build.json --watch",
 		"lint:raw": "eslint",
-		"lint": "run lint:raw ."
+		"lint": "run lint:raw .",
+		"configure": "node-gyp configure",
+		"build:gyp": "node-gyp build"
 	},
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/bitfocus/companion-module-your-module-name.git"
+		"url": "git+https://github.com/alex-Arc/companion-module-generic-timecode.git"
 	},
 	"dependencies": {
-		"@companion-module/base": "~1.11.2"
+		"@companion-module/base": "~1.11.2",
+		"bindings": "^1.5.0",
+		"nan": "^2.22.1",
+		"naudiodon": "^2.3.6"
 	},
 	"devDependencies": {
 		"@companion-module/tools": "^2.1.1",
+		"@types/bindings": "^1.5.5",
 		"@types/node": "^22.10.2",
 		"eslint": "^9.17.0",
 		"husky": "^9.1.7",
 		"lint-staged": "^15.2.11",
+		"node-gyp": "^11.1.0",
 		"prettier": "^3.4.2",
 		"rimraf": "^6.0.1",
 		"typescript": "~5.5.4",
@@ -41,5 +48,8 @@
 			"yarn lint:raw --fix"
 		]
 	},
-	"packageManager": "yarn@4.5.3"
+	"packageManager": "yarn@4.5.3",
+	"engines": {
+		"node": "^22.10.2"
+	}
 }
